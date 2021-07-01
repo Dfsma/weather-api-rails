@@ -1,0 +1,13 @@
+es:
+  temperature:
+    below_zero: ' grados centígrados bajo cero'
+    above_zero: ' grados centígrados'
+  wind:
+    none: Sin viento
+    weak: Brisa ligera
+    medium: Clima ventoso
+    strong: Viento muy fuerte
+  clouds:
+    none: Tiempo despejado
+    partial: Parcialmente nublado
+    full: Clima nublado

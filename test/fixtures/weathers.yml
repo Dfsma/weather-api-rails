@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  degrees: 1
+  wind_speed: 1
+  clouds: 1
+
+two:
+  degrees: 1
+  wind_speed: 1
+  clouds: 1
