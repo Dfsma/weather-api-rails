@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
 
   
-  resources :weathers do
+  resources :weather do
     collection do
       post '/temperature', to: "weathers#create_temperature"
     end

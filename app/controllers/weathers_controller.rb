@@ -16,7 +16,7 @@ class WeathersController < ApplicationController
             if @weather.save
 
                 if  @weather.degrees < 0
-                    msg = {:description => "#{@weather.degrees.to_s + I18n.t('temperature.below_zero')}"}
+                    msg = {:description => "#{@weather.degrees.to_s.tr('-', '') + I18n.t('temperature.below_zero')}"}
                     render :json => msg, status: 200
                 elsif @weather.degrees >= 0
                     msg = {:description => "#{@weather.degrees.to_s + I18n.t('temperature.above_zero')}"}
