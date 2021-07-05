@@ -1,4 +1,6 @@
 class WeathersController < ApplicationController
+    before_action :set_note, only: [:show, :update, :destroy]
+    before_action :authorized
 
     def index
         @weathers = Weather.all
@@ -12,6 +14,7 @@ class WeathersController < ApplicationController
 
     def create_temperature
         @weather = Weather.new(weather_temp_param)
+        @weather.user_id = @user.id
 
             if @weather.save
 
@@ -31,6 +34,7 @@ class WeathersController < ApplicationController
     
     def create_wind
         @weather = Weather.new(weather_wind_param)
+        @weather.user_id = @user.id
 
             if @weather.save
                 if  @weather.wind_speed < 3
@@ -54,6 +58,7 @@ class WeathersController < ApplicationController
 
     def create_cloud
         @weather = Weather.new(weather_cloud_param)
+        @weather.user_id = @user.id
 
             if @weather.save
                 if @weather.clouds <= 10
@@ -90,6 +95,9 @@ class WeathersController < ApplicationController
         def weather_cloud_param
             params.require(:weather).permit(:clouds)
         end
-   
+        
+        def set_weather
+            @weather = Weather.find(params[:id])
+        end
     
 end

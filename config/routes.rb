@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "/auto_login", to: "users#auto_login"
 
   
-  resources :weather do
+  resources :weathers do
     collection do
       post '/temperature', to: "weathers#create_temperature"
     end
